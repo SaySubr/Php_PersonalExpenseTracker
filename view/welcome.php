@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="welcome.css">
-    <title>welcome page</title>
+    <title>Начальная страница</title>
 </head>
 <body>
 
     <header>
-        <div class="header-content">
-            <div class="logo">Exam PHP</div>
-            <a href="login.php" class="login-button">Вход</a>
-            <a href="auth.php" class="login-button">регистрация</a>
+    <div class="header-content">
+        <div class="logo">Exam PHP</div>
+            <div class="header-buttons">
+                <a href="login.php" class="login-button-login">Вход</a>
+                <a href="auth.php" class="login-button-auth">Регистрация</a>
+            </div>
         </div>
     </header>
+
+<!-- Заглушка для карты -->
+<a href="map.php" class="login-button-auth">Карта</a>
 
     <div class="container">
         <h1>Добро пожаловать в Ваш трекер расходов</h1>

@@ -34,6 +34,10 @@ header {
     background-color: #c76a19; /* Темнее оранжевый при наведении */
 }
 
+
+
+
+
 .container {
     max-width: 400px; /* Ограничение ширины контейнера */
     margin: 50px auto;
@@ -91,6 +95,9 @@ button:hover {
 }
 
 
+
+
+
 #description {
   min-height: 60px;
   color: #fff;
@@ -107,11 +114,12 @@ button:hover {
 footer {
   padding: 10px;
   width: 100%;
+  font-style: italic;
   text-align: center;
   background: rgba(209, 139, 10, 0.74);
   color: #fff;
-  font-size: 36px;
   position: fixed;
+  font-size: 36px;
   bottom: 0.1px;
   left: 0;
   z-index: 10;

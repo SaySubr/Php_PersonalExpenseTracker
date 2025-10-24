@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-    <title>Вход в аккаунт</title>
+    <title>Авторизация</title>
 </head>
 <body>
 
@@ -15,7 +15,6 @@
         </div>
     </header>
     
-    <h2>Вход</h2>
 
     <div class="container">
         <h1>Вход в аккаунт</h1>
@@ -27,6 +26,9 @@
             <input type="password" id="password" name="password" required>
 
             <button type="submit">Войти</button>
+
+            <p>Нет аккаунта? <a href="auth.php">Зарегистрируйтесь</a></p>
+
         </form>
     </div>
 
