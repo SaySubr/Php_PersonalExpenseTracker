@@ -19,7 +19,7 @@
     <h1>Магазины на карте</h1>
     <div id="map"></div>
 
-
+    <div id="modal-container"></div> 
 
 </body>
 </html>
@@ -40,12 +40,50 @@ const marker = L.marker([storeLocation.lat, storeLocation.lon]).addTo(map);
 marker.bindPopup("Магазин: Пятёрочка<br>Трата: молоко — 90 руб, хлеб — 40 руб, категория: Еда").openPopup();
 
 
+
 marker.on("click", () => {
-    marker.getPopup().setContent(`
-        <strong>${storeLocation.name}</strong><br>
-        Трата: молоко — 90 руб, хлеб — 40 руб<br>
-        Категория: Еда
-    `).openOn(map);
+    openModal(`
+        <strong>${store.name}</strong><br>
+        Трата: ${store.expenses}<br>
+        Категория: ${store.category}
+    `);
 });
+
+      
+       // Массив для хранения маркеров
+        const markers = [];
+
+        // Функция для добавления маркера при клике на карту
+        map.on('click', function(e) {
+            const lat = e.latlng.lat;
+            const lon = e.latlng.lng;
+
+            // Создаем маркер
+            const marker = L.marker([lat, lon]).addTo(map);
+            markers.push(marker);
+
+            // Загружаем модальное окно из modal.php
+            fetch('modal.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('modal-container').innerHTML = data;
+                    openModal();
+
+                    
+
+                    marker.on("click", () => {
+                        openModal();
+                    });
+                });
+        });
+
+        function openModal() {
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
 
 </script>
