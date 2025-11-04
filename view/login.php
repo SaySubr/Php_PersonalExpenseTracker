@@ -18,7 +18,7 @@
 
     <div class="container">
         <h1>Вход в аккаунт</h1>
-        <form action="auth.php" method="post">
+        <<form action="login_process.php" method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
