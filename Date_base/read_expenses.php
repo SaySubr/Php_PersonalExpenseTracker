@@ -2,12 +2,12 @@
 header('Content-Type: application/json');
 
 // если файла нет, вернуть пустой массив
-if (!file_exists('expenses.txt')) {
+if (!file_exists('../view/expenses.txt')) {
     echo json_encode([]);
     exit;
 }
 
-$lines = file('expenses.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$lines = file('../view/expenses.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $result = [];
 
 foreach ($lines as $line) {

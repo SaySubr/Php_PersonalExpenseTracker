@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db_connect.php';
+require_once '/Date_base/db_connect.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];

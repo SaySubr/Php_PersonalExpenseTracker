@@ -7,9 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lon = $_POST['lon'] ?? '';
 
     $data = "Товар: $product, Сумма: $amount, Категория: $category, Lat: $lat, Lon: $lon\n";
-    file_put_contents('expenses.txt', $data, FILE_APPEND);
+    file_put_contents('../view/expenses.txt', $data, FILE_APPEND);
 
-    header('Location: map.php');
+    header('Location: ../view/map.php');
     exit;
 } else {
     echo "Недопустимый метод запроса.";

@@ -1,11 +1,11 @@
 <?php
 $date = $_GET['date'] ?? '';
 
-if (!$date || !file_exists('expenses.txt')) {
+if (!$date || !file_exists('../view/expenses.txt')) {
     exit('Нет данных.');
 }
 
-$lines = file('expenses.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$lines = file('../view/expenses.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $result = '';
 $total = 0; 
 
