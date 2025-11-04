@@ -3,12 +3,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $product = $_POST['product'] ?? '';
     $amount = $_POST['amount'] ?? 0;
     $category = $_POST['category'] ?? '';
+    $lat = $_POST['lat'] ?? '';
+    $lon = $_POST['lon'] ?? '';
 
-    // Запишите данные в файл или базу данных
-    $data = "Товар: $product, Сумма: $amount, Категория: $category\n";
+    $data = "Товар: $product, Сумма: $amount, Категория: $category, Lat: $lat, Lon: $lon\n";
     file_put_contents('expenses.txt', $data, FILE_APPEND);
 
-    // Перенаправление обратно на карту
     header('Location: map.php');
     exit;
 } else {
